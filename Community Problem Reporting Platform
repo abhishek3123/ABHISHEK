@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community Problem Reporting Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        header {
+            background: #1e3a8a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #0f172a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3a8a;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #1e3a8a;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #0f172a;
+            color: white;
+            margin-top: 30px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Community Problem Reporting Platform</h1>
+    <p>Report Issues. Improve Your Community.</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Report Issue</a>
+    <a href="#">Track Status</a>
+    <a href="#">Admin</a>
+</nav>
+
+<div class="container">
+    <h2>Report an Issue</h2>
+
+    <form id="reportForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+
+        <select required>
+            <option value="">Select Problem Type</option>
+            <option>Road Damage</option>
+            <option>Garbage Overflow</option>
+            <option>Street Light Issue</option>
+            <option>Water Leakage</option>
+            <option>Other</option>
+        </select>
+
+        <textarea rows="4" placeholder="Describe the issue..." required></textarea>
+
+        <input type="text" placeholder="Location (Area / Street)" required>
+
+        <button type="submit">Submit Report</button>
+    </form>
+
+    <p id="message" class="success"></p>
+</div>
+
+<footer>
+    © 2026 Community Reporting System | Built for Social Good
+</footer>
+
+<script>
+    document.getElementById("reportForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("message").innerText = "✅ Your issue has been submitted successfully!";
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
